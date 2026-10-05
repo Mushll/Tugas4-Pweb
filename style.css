@@ -7,9 +7,9 @@
 
 body {
     min-height: 100vh;
-    font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
-    color: var(--text);
-    background: var(--bg);
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #182235;
+    background: #eef3f8;
 }
 
 button,
@@ -20,18 +20,14 @@ select {
 
 /* ===== 2. CSS VARIABLES ===== */
 :root {
-    --primary: #0e7c86;
-    --primary-dark: #095c63;
-    --primary-soft: #e3f3f4;
-    --danger: #e5484d;
-    --danger-soft: #fdecec;
-    --secondary: #64748b;
-    --border: #d5dfe2;
-    --text: #14292c;
-    --muted: #8a9ba0;
+    --primary: #1469e8;
+    --primary-dark: #0f4fae;
+    --danger: #f52f3d;
+    --secondary: #6c7b8b;
+    --border: #d9e0e8;
+    --text: #182235;
     --surface: #ffffff;
-    --bg: #f1f5f5;
-    --nav: #0b2f33;
+    --radius: 14px;
 }
 
 .icon {
@@ -40,99 +36,85 @@ select {
     flex-shrink: 0;
 }
 
-/* ===== 3. NAVBAR ===== */
+/* ===== 3. NAVBAR (FLEXBOX) ===== */
 .navbar {
-    height: 72px;
+    height: 76px;
     padding: 0 34px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: white;
-    background: var(--nav);
+    background: #123f70;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 700;
 }
 
 .brand .icon {
-    width: 40px;
-    height: 40px;
-    padding: 9px;
-    border-radius: 12px;
-    background: var(--primary);
+    width: 30px;
+    height: 30px;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 36px;
 }
 
 .nav-menu a {
-    padding: 8px 16px;
-    border-radius: 999px;
-    color: #b9d3d5;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 15px;
 }
 
 .nav-menu a:hover {
-    color: white;
-}
-
-.nav-menu a.active {
-    color: white;
-    background: rgba(255, 255, 255, .14);
+    text-decoration: underline;
 }
 
 .avatar {
-    width: 38px;
-    height: 38px;
-    margin-left: 18px;
+    width: 36px;
+    height: 36px;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    color: var(--primary-dark);
-    background: var(--primary-soft);
+    color: #123f70;
+    background: white;
 }
 
 .avatar .icon {
-    width: 21px;
-    height: 21px;
+    width: 22px;
+    height: 22px;
 }
 
-/* ===== 4. LAYOUT UTAMA ===== */
+/* ===== 4. LAYOUT UTAMA (GRID) ===== */
 .container {
     width: min(1150px, calc(100% - 32px));
-    margin: 22px auto;
+    margin: 18px auto;
     display: grid;
     grid-template-columns: 380px 1fr;
-    gap: 20px;
+    gap: 16px;
     align-items: start;
 }
 
 /* ===== 5. CARD ===== */
 .card {
     background: var(--surface);
-    border: 1px solid #e0e8ea;
-    border-top: 4px solid var(--primary);
-    border-radius: 6px 6px 18px 18px;
-    padding: 26px 28px 30px;
-    box-shadow: 0 10px 28px rgba(11, 47, 51, .07);
+    border: 1px solid #e3e8ee;
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 8px 22px rgba(33, 54, 79, .08);
 }
 
 .card h2 {
-    margin-bottom: 22px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #e8eef0;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 700;
+    margin-bottom: 22px;
 }
 
 /* ===== 6. FORM ===== */
@@ -142,10 +124,9 @@ select {
 
 .form-group label {
     display: block;
-    margin-bottom: 6px;
-    font-size: 13px;
+    margin-bottom: 7px;
+    font-size: 14px;
     font-weight: 600;
-    color: #35494d;
 }
 
 .form-group input,
@@ -153,37 +134,37 @@ select {
     width: 100%;
     height: 44px;
     padding: 0 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
+    border: 2px solid var(--border);
+    border-radius: 7px;
     font-size: 14px;
     color: var(--text);
     outline: none;
-    background-color: #f7fafa;
+    background-color: white;
 }
 
 .form-group input::placeholder {
-    color: var(--muted);
+    color: #9aa6b4;
 }
 
 .form-group select {
     appearance: none;
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314292c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23182235' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 14px center;
     background-size: 13px;
 }
 
+/* Focus state */
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--primary);
-    background-color: white;
-    box-shadow: 0 0 0 4px rgba(14, 124, 134, .12);
+    box-shadow: 0 0 0 3px rgba(20, 105, 232, .10);
 }
 
 .form-group input:disabled {
-    color: var(--muted);
-    background-color: #eaf0f1;
+    background-color: #f1f4f8;
+    color: var(--secondary);
 }
 
 .form-actions {
@@ -195,9 +176,10 @@ select {
 /* ===== 7. BUTTON ===== */
 .btn {
     min-height: 42px;
-    padding: 0 18px;
-    border: 1.5px solid transparent;
-    border-radius: 999px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -207,27 +189,13 @@ select {
     gap: 8px;
 }
 
-.btn-primary {
-    min-width: 110px;
-    color: white;
-    background: var(--primary);
-}
-
-.btn-secondary {
-    color: var(--secondary);
-    border-color: var(--border);
-    background: white;
-}
-
-.btn-danger {
-    color: var(--danger);
-    border-color: #f6c5c7;
-    background: var(--danger-soft);
-}
+.btn-primary   { background: var(--primary); min-width: 108px; }
+.btn-secondary { background: var(--secondary); }
+.btn-danger    { background: var(--danger); }
 
 .btn-primary:hover   { background: var(--primary-dark); }
-.btn-secondary:hover { background: #f1f5f6; }
-.btn-danger:hover    { color: white; border-color: var(--danger); background: var(--danger); }
+.btn-secondary:hover { background: #56636f; }
+.btn-danger:hover    { background: #d81f2c; }
 
 .message {
     min-height: 20px;
@@ -237,7 +205,7 @@ select {
 }
 
 .message.error   { color: var(--danger); }
-.message.success { color: #12865a; }
+.message.success { color: #1a8f4c; }
 .message.info    { color: var(--primary); }
 
 /* ===== 8. HEADER TABEL & SEARCH ===== */
@@ -246,15 +214,11 @@ select {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 22px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #e8eef0;
+    margin-bottom: 20px;
 }
 
 .table-header h2 {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    margin-bottom: 0;
 }
 
 .search-box {
@@ -263,38 +227,36 @@ select {
 }
 
 .search-box input {
-    width: 220px;
-    padding: 0 16px;
-    border: 1.5px solid var(--border);
+    width: 210px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
     border-right: 0;
-    border-radius: 999px 0 0 999px;
+    border-radius: 8px 0 0 8px;
     font-size: 14px;
     outline: none;
-    background: #f7fafa;
 }
 
 .search-box input::placeholder {
-    color: var(--muted);
+    color: #9aa6b4;
 }
 
 .search-box input:focus {
     border-color: var(--primary);
-    background: white;
 }
 
 .search-box button {
-    width: 52px;
+    width: 48px;
     display: grid;
     place-items: center;
-    border: 0;
-    border-radius: 0 999px 999px 0;
-    color: white;
-    background: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 0 8px 8px 0;
+    color: #3b4757;
+    background: #f6f8fb;
     cursor: pointer;
 }
 
 .search-box button:hover {
-    background: var(--primary-dark);
+    background: #e9eef5;
 }
 
 /* ===== 9. TABLE ===== */
@@ -307,85 +269,90 @@ table {
 
 th,
 td {
-    padding: 14px 12px;
+    padding: 13px 12px;
     text-align: left;
-    border-bottom: 1px solid #e8eef0;
+    border-bottom: 1px solid var(--border);
 }
 
 th {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--primary-dark);
-    background: var(--primary-soft);
-    border-bottom: 2px solid var(--primary);
+    color: white;
+    font-weight: 600;
+    background: var(--primary);
 }
 
-th:first-child { width: 52px; border-radius: 10px 0 0 0; }
-th:last-child  { text-align: center; border-radius: 0 10px 0 0; }
+th:first-child { border-radius: 8px 0 0 0; width: 52px; }
+th:last-child  { border-radius: 0 8px 0 0; text-align: center; }
 
 td:last-child .actions {
     justify-content: center;
 }
 
 tbody tr:hover {
-    background: #f3fafa;
+    background: #f5f9ff;
 }
 
 .empty {
     text-align: center;
-    color: var(--muted);
+    color: var(--secondary);
 }
 
 /* ===== 10. ACTION BUTTON ===== */
 .actions {
     display: flex;
-    gap: 8px;
+    gap: 7px;
 }
 
 .action {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     display: grid;
     place-items: center;
     border: 0;
-    border-radius: 50%;
+    border-radius: 6px;
+    color: white;
     cursor: pointer;
 }
 
 .action .icon {
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
 }
 
-.edit   { color: var(--primary); background: var(--primary-soft); }
-.delete { color: var(--danger);  background: var(--danger-soft); }
+.edit   { background: var(--primary); }
+.delete { background: var(--danger); }
 
-.edit:hover   { color: white; background: var(--primary); }
-.delete:hover { color: white; background: var(--danger); }
+.edit:hover   { background: var(--primary-dark); }
+.delete:hover { background: #d81f2c; }
 
 /* ===== 11. PAGINATION ===== */
 .pagination {
     display: flex;
     justify-content: flex-end;
-    gap: 6px;
-    margin-top: 26px;
+    margin-top: 25px;
 }
 
 .pagination button {
-    min-width: 40px;
-    height: 40px;
-    border: 1.5px solid var(--border);
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--secondary);
+    min-width: 43px;
+    height: 42px;
+    margin-left: -1px;
+    border: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text);
     background: white;
     cursor: pointer;
 }
 
+.pagination button:first-child {
+    margin-left: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.pagination button:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
 .pagination button:hover {
-    color: var(--primary);
-    border-color: var(--primary);
+    background: #f5f9ff;
 }
 
 .pagination .active {
