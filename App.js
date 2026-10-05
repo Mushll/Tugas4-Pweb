@@ -20,7 +20,7 @@ const inputNama  = document.getElementById("nama");
 const inputJur   = document.getElementById("jurusan");
 const inputEmail = document.getElementById("email");
 const message    = document.getElementById("message");
-const btnSave    = document.getElementById("btnSave");
+const saveLabel  = document.getElementById("saveLabel");
 const btnCancel  = document.getElementById("btnCancel");
 const tbody      = document.getElementById("studentBody");
 const pagination = document.getElementById("pagination");
@@ -71,8 +71,8 @@ function renderTable() {
                 <td>${escapeHtml(s.email)}</td>
                 <td>
                     <div class="actions">
-                        <button class="action edit" data-nim="${escapeHtml(s.nim)}" title="Edit">✎</button>
-                        <button class="action delete" data-nim="${escapeHtml(s.nim)}" title="Hapus">🗑</button>
+                        <button class="action edit" data-nim="${escapeHtml(s.nim)}" title="Edit"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></button>
+                        <button class="action delete" data-nim="${escapeHtml(s.nim)}" title="Hapus"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></button>
                     </div>
                 </td>
             </tr>
@@ -105,7 +105,7 @@ function resetForm() {
     form.reset();
     editingNim = null;
     inputNim.disabled = false;
-    btnSave.textContent = "💾 Simpan";
+    saveLabel.textContent = "Simpan";
     message.className = "message";
     message.textContent = "";
 }
@@ -164,7 +164,7 @@ tbody.addEventListener("click", e => {
         inputEmail.value = s.email;
         inputNim.disabled = true;
         editingNim = nim;
-        btnSave.textContent = "💾 Update";
+        saveLabel.textContent = "Update";
         showMessage("Mode edit: ubah data lalu klik Update.", "info");
         inputNama.focus();
     }
