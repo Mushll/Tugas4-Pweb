@@ -71,8 +71,8 @@ function renderTable() {
                 <td>${escapeHtml(s.email)}</td>
                 <td>
                     <div class="actions">
-                        <button class="action edit" data-nim="${escapeHtml(s.nim)}" title="Edit"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></button>
-                        <button class="action delete" data-nim="${escapeHtml(s.nim)}" title="Hapus"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></button>
+                        <button class="action edit" data-nim="${escapeHtml(s.nim)}" title="Edit"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></button>
+                        <button class="action delete" data-nim="${escapeHtml(s.nim)}" title="Hapus"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></button>
                     </div>
                 </td>
             </tr>
