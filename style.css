@@ -1,0 +1,276 @@
+/* ===== 1. RESET & GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #182235;
+    background: #eef3f8;
+}
+
+/* ===== 2. CSS VARIABLES ===== */
+:root {
+    --primary: #1469e8;
+    --primary-dark: #0f4fae;
+    --danger: #f52f3d;
+    --secondary: #6c7b8b;
+    --border: #d9e0e8;
+    --text: #182235;
+    --surface: #ffffff;
+    --radius: 14px;
+}
+
+/* ===== 3. NAVBAR (FLEXBOX) ===== */
+.navbar {
+    height: 76px;
+    padding: 0 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background: #123f70;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: white;
+}
+
+/* ===== 4. LAYOUT UTAMA (GRID) ===== */
+.container {
+    width: min(1150px, calc(100% - 32px));
+    margin: 18px auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+/* ===== 5. CARD ===== */
+.card {
+    background: var(--surface);
+    border: 1px solid #e3e8ee;
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 8px 22px rgba(33, 54, 79, .08);
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* ===== 6. FORM ===== */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 2px solid var(--border);
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+}
+
+/* Focus state */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(20, 105, 232, .10);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+/* ===== 7. BUTTON ===== */
+.btn {
+    min-height: 42px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary   { background: var(--primary); }
+.btn-secondary { background: var(--secondary); }
+.btn-danger    { background: var(--danger); }
+
+.btn-primary:hover { background: var(--primary-dark); }
+
+/* ===== 8. HEADER TABEL & SEARCH (FLEXBOX) ===== */
+.table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.table-header h2 {
+    margin-bottom: 0;
+}
+
+.search-box {
+    display: flex;
+    height: 42px;
+}
+
+.search-box input {
+    width: 210px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+}
+
+.search-box button {
+    width: 48px;
+    border: 1px solid var(--border);
+    border-radius: 0 8px 8px 0;
+    background: white;
+    cursor: pointer;
+}
+
+/* ===== 9. TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: white;
+    background: var(--primary);
+}
+
+th:first-child { border-radius: 8px 0 0 0; }
+th:last-child  { border-radius: 0 8px 0 0; }
+
+tbody tr:hover {
+    background: #f5f9ff;
+}
+
+/* ===== 10. ACTION BUTTON ===== */
+.actions {
+    display: flex;
+    gap: 7px;
+}
+
+.action {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.edit   { background: var(--primary); }
+.delete { background: var(--danger); }
+
+/* ===== 11. PAGINATION ===== */
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.pagination button {
+    min-width: 43px;
+    height: 42px;
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background: #f5f9ff;
+}
+
+.pagination .active {
+    color: white;
+    background: var(--primary);
+}
+
+/* ===== 12. RESPONSIVE ===== */
+@media (max-width: 950px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .nav-menu a {
+        display: none;
+    }
+
+    .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        overflow-x: auto;
+    }
+}
