@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="brand">🎓 Student Management</div>
+        <nav class="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">Students</a>
+            <a href="#">About</a>
+            <span class="avatar">👤</span>
+        </nav>
+    </header>
+
+    <!-- LAYOUT UTAMA (GRID 2 KOLOM) -->
+    <main class="container">
+
+        <!-- KOLOM KIRI: FORM -->
+        <section class="card">
+            <h2>Form Student</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nim">NIM</label>
+                    <input type="text" id="nim" placeholder="Masukkan NIM">
+                </div>
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label for="jurusan">Jurusan</label>
+                    <select id="jurusan">
+                        <option value="">Pilih Jurusan</option>
+                        <option>Informatika</option>
+                        <option>Sistem Informasi</option>
+                        <option>Teknik Komputer</option>
+                        <option>Manajemen</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">💾 Simpan</button>
+                    <button type="button" class="btn btn-secondary">Batal</button>
+                    <button type="reset" class="btn btn-danger">⟳ Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- KOLOM KANAN: DATA -->
+        <section class="card">
+            <div class="table-header">
+                <h2>Data Mahasiswa</h2>
+                <div class="search-box">
+                    <input type="text" placeholder="Cari mahasiswa...">
+                    <button type="button">🔍</button>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Jurusan</th>
+                        <th>Email</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td><td>231001</td><td>Andi Pratama</td><td>Informatika</td><td>andi@mail.com</td>
+                        <td><div class="actions"><button class="action edit">✎</button><button class="action delete">🗑</button></div></td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>231002</td><td>Siti Aisyah</td><td>Sistem Informasi</td><td>siti@mail.com</td>
+                        <td><div class="actions"><button class="action edit">✎</button><button class="action delete">🗑</button></div></td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>231003</td><td>Budi Santoso</td><td>Teknik Komputer</td><td>budi@mail.com</td>
+                        <td><div class="actions"><button class="action edit">✎</button><button class="action delete">🗑</button></div></td>
+                    </tr>
+                    <tr>
+                        <td>4</td><td>231004</td><td>Nina Marlina</td><td>Manajemen</td><td>nina@mail.com</td>
+                        <td><div class="actions"><button class="action edit">✎</button><button class="action delete">🗑</button></div></td>
+                    </tr>
+                    <tr>
+                        <td>5</td><td>231005</td><td>Rizky Pratama</td><td>Informatika</td><td>rizky@mail.com</td>
+                        <td><div class="actions"><button class="action edit">✎</button><button class="action delete">🗑</button></div></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <button>«</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>›</button>
+                <button>»</button>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
