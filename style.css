@@ -12,6 +12,12 @@ body {
     background: #eef3f8;
 }
 
+button,
+input,
+select {
+    font-family: inherit;
+}
+
 /* ===== 2. CSS VARIABLES ===== */
 :root {
     --primary: #1469e8;
@@ -24,7 +30,14 @@ body {
     --radius: 14px;
 }
 
-/* ===== 3. NAVBAR (FLEXBOX) ===== */
+/* Ikon SVG */
+.icon {
+    width: 1.1em;
+    height: 1.1em;
+    flex-shrink: 0;
+}
+
+/* ===== 3. NAVBAR ===== */
 .navbar {
     height: 76px;
     padding: 0 34px;
@@ -36,8 +49,16 @@ body {
 }
 
 .brand {
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 21px;
     font-weight: 700;
+}
+
+.brand .icon {
+    width: 30px;
+    height: 30px;
 }
 
 .nav-menu {
@@ -50,6 +71,7 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 600;
+    font-size: 15px;
 }
 
 .nav-menu a:hover {
@@ -57,15 +79,21 @@ body {
 }
 
 .avatar {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     display: grid;
     place-items: center;
     border-radius: 50%;
+    color: #123f70;
     background: white;
 }
 
-/* ===== 4. LAYOUT UTAMA (GRID) ===== */
+.avatar .icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* ===== 4. LAYOUT UTAMA ===== */
 .container {
     width: min(1150px, calc(100% - 32px));
     margin: 18px auto;
@@ -85,8 +113,9 @@ body {
 }
 
 .card h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 22px;
 }
 
 /* ===== 6. FORM ===== */
@@ -97,6 +126,7 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 7px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -108,21 +138,39 @@ body {
     border: 2px solid var(--border);
     border-radius: 7px;
     font-size: 14px;
+    color: var(--text);
     outline: none;
     background: white;
 }
 
-/* Focus state */
+.form-group input::placeholder {
+    color: #9aa6b4;
+}
+
+.form-group select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23182235' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 13px;
+}
+
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(20, 105, 232, .10);
 }
 
+.form-group input:disabled {
+    background: #f1f4f8;
+    color: var(--secondary);
+}
+
 .form-actions {
     display: flex;
     gap: 10px;
-    margin-top: 22px;
+    margin-top: 6px;
 }
 
 /* ===== 7. BUTTON ===== */
@@ -132,17 +180,35 @@ body {
     border: 0;
     border-radius: 8px;
     color: white;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.btn-primary   { background: var(--primary); }
+.btn-primary   { background: var(--primary); min-width: 108px; }
 .btn-secondary { background: var(--secondary); }
 .btn-danger    { background: var(--danger); }
 
-.btn-primary:hover { background: var(--primary-dark); }
+.btn-primary:hover   { background: var(--primary-dark); }
+.btn-secondary:hover { background: #56636f; }
+.btn-danger:hover    { background: #d81f2c; }
 
-/* ===== 8. HEADER TABEL & SEARCH (FLEXBOX) ===== */
+.message {
+    min-height: 20px;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.message.error   { color: var(--danger); }
+.message.success { color: #1a8f4c; }
+.message.info    { color: var(--primary); }
+
+/* ===== 8. HEADER TABEL & SEARCH ===== */
 .table-header {
     display: flex;
     align-items: center;
@@ -166,7 +232,12 @@ body {
     border: 1px solid var(--border);
     border-right: 0;
     border-radius: 8px 0 0 8px;
+    font-size: 14px;
     outline: none;
+}
+
+.search-box input::placeholder {
+    color: #9aa6b4;
 }
 
 .search-box input:focus {
@@ -175,10 +246,17 @@ body {
 
 .search-box button {
     width: 48px;
+    display: grid;
+    place-items: center;
     border: 1px solid var(--border);
     border-radius: 0 8px 8px 0;
-    background: white;
+    color: #3b4757;
+    background: #f6f8fb;
     cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #e9eef5;
 }
 
 /* ===== 9. TABLE ===== */
@@ -186,6 +264,7 @@ table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    font-size: 14px;
 }
 
 th,
@@ -197,14 +276,24 @@ td {
 
 th {
     color: white;
+    font-weight: 600;
     background: var(--primary);
 }
 
-th:first-child { border-radius: 8px 0 0 0; }
-th:last-child  { border-radius: 0 8px 0 0; }
+th:first-child { border-radius: 8px 0 0 0; width: 52px; }
+th:last-child  { border-radius: 0 8px 0 0; text-align: center; }
+
+td:last-child .actions {
+    justify-content: center;
+}
 
 tbody tr:hover {
     background: #f5f9ff;
+}
+
+.empty {
+    text-align: center;
+    color: var(--secondary);
 }
 
 /* ===== 10. ACTION BUTTON ===== */
@@ -216,16 +305,26 @@ tbody tr:hover {
 .action {
     width: 40px;
     height: 40px;
+    display: grid;
+    place-items: center;
     border: 0;
     border-radius: 6px;
     color: white;
     cursor: pointer;
 }
 
+.action .icon {
+    width: 18px;
+    height: 18px;
+}
+
 .edit   { background: var(--primary); }
 .delete { background: var(--danger); }
 
-/* ===== 11. PAGINATION ===== */
+.edit:hover   { background: var(--primary-dark); }
+.delete:hover { background: #d81f2c; }
+
+/* ===== 11. PAGINATION (tombol menyatu) ===== */
 .pagination {
     display: flex;
     justify-content: flex-end;
@@ -235,9 +334,21 @@ tbody tr:hover {
 .pagination button {
     min-width: 43px;
     height: 42px;
+    margin-left: -1px;
     border: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text);
     background: white;
     cursor: pointer;
+}
+
+.pagination button:first-child {
+    margin-left: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.pagination button:last-child {
+    border-radius: 0 8px 8px 0;
 }
 
 .pagination button:hover {
@@ -245,7 +356,9 @@ tbody tr:hover {
 }
 
 .pagination .active {
+    position: relative;
     color: white;
+    border-color: var(--primary);
     background: var(--primary);
 }
 
@@ -257,6 +370,10 @@ tbody tr:hover {
 }
 
 @media (max-width: 650px) {
+    .navbar {
+        padding: 0 16px;
+    }
+
     .nav-menu a {
         display: none;
     }
@@ -266,11 +383,17 @@ tbody tr:hover {
         align-items: flex-start;
     }
 
+    .search-box,
+    .search-box input {
+        width: 100%;
+    }
+
     .form-actions {
         flex-wrap: wrap;
     }
 
     .card {
+        padding: 20px;
         overflow-x: auto;
     }
 }
