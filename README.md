@@ -19,16 +19,20 @@ Laporan tugas mata kuliah Pemrograman Web: membuat tampilan Student Management (
 
 ## Screenshot Web
 <img width="1256" height="802" alt="image" src="https://github.com/user-attachments/assets/4989964e-6971-4ffc-bcd9-b6c0275b254e" />
--- link website
-``
+-  link website
+```
+
 https://tugas4-pweb-mu.vercel.app/
-``
+
+```
 
 ## Struktur Repository
-``
+
+```
 Tugas4-Pweb/
 ├── index.html    → struktur dan konten halaman
 ├── style.css     → seluruh styling dan responsive
 ├── app.js        → logika interaksi dan data
 └── README.md     → laporan ini
-``
+
+```
