@@ -1,93 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Mahasiswa | Sistem Akademik</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header class="navbar">
+    <a href="#beranda" class="brand">
+      <span class="logo">SA</span>
+      <span><strong>Sistem Akademik</strong><small>MANAJEMEN MAHASISWA</small></span>
+    </a>
+    <nav class="nav-menu">
+      <a href="#beranda">Beranda</a>
+      <a href="#data-mahasiswa" class="active">Mahasiswa</a>
+      <a href="#tentang">Tentang</a>
+      <span class="user"><span class="avatar">AD</span>Admin</span>
+    </nav>
+  </header>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="brand"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4L12 21l7-3.8v-4L12 17l-7-3.8z"/></svg><span>Student Management</span></div>
-        <nav class="nav-menu">
-            <a href="#">Home</a>
-            <a href="#">Students</a>
-            <a href="#">About</a>
-            <span class="avatar"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z"/></svg></span>
-        </nav>
-    </header>
+  <main class="page" id="data-mahasiswa">
+    <div class="page-head">
+      <div>
+        <p class="crumb">PORTAL AKADEMIK / DIREKTORI</p>
+        <h1>Data mahasiswa</h1>
+        <p class="sub">Kelola informasi mahasiswa dalam satu tampilan yang ringkas.</p>
+      </div>
+      <p class="year"><span class="dot"></span>Tahun akademik 2025/2026</p>
+    </div>
 
-    <!-- LAYOUT UTAMA (GRID 2 KOLOM) -->
-    <main class="container">
+    <div class="container">
+      <section class="card">
+        <div class="card-head">
+          <div><p class="eyebrow">FORMULIR</p><h2>Tambah mahasiswa</h2></div>
+          <span class="step">01</span>
+        </div>
+        <form id="form">
+          <div class="form-group">
+            <label for="nim">NIM</label>
+            <input id="nim" placeholder="Contoh: 231001" required>
+          </div>
+          <div class="form-group">
+            <label for="nama">Nama lengkap</label>
+            <input id="nama" placeholder="Masukkan nama mahasiswa" required>
+          </div>
+          <div class="form-group">
+            <label for="jurusan">Jurusan</label>
+            <select id="jurusan" required>
+              <option value="">Pilih jurusan</option>
+              <option>Informatika</option>
+              <option>Sistem Informasi</option>
+              <option>Teknik Komputer</option>
+              <option>Manajemen</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="nama@kampus.ac.id" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="btn-simpan">Simpan data</button>
+            <button type="button" class="btn btn-light" id="btn-batal">Batal</button>
+          </div>
+          <button type="button" class="link" id="btn-kosong">Kosongkan formulir</button>
+        </form>
+      </section>
 
-        <!-- KOLOM KIRI: FORM -->
-        <section class="card">
-            <h2>Form Student</h2>
-            <form id="studentForm">
-                <div class="form-group">
-                    <label for="nim">NIM</label>
-                    <input type="text" id="nim" placeholder="Masukkan NIM">
-                </div>
-                <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
-                </div>
-                <div class="form-group">
-                    <label for="jurusan">Jurusan</label>
-                    <select id="jurusan">
-                        <option value="">Pilih Jurusan</option>
-                        <option>Informatika</option>
-                        <option>Sistem Informasi</option>
-                        <option>Teknik Komputer</option>
-                        <option>Manajemen</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Masukkan email">
-                </div>
+      <section class="card">
+        <div class="table-header">
+          <div><p class="eyebrow">DIREKTORI</p><h2>Daftar mahasiswa</h2></div>
+          <span class="count" id="count">00 data</span>
+        </div>
+        <div class="toolbar">
+          <p class="muted">Data mahasiswa terdaftar</p>
+          <div class="search-box">
+            <span class="icon">&#9906;</span>
+            <input id="search" placeholder="Cari nama atau NIM">
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>No.</th><th>NIM</th><th>Nama</th><th>Jurusan</th><th>Email</th><th>Aksi</th></tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <p class="muted" id="info"></p>
+          <div class="pagination" id="pagination"></div>
+        </div>
+      </section>
+    </div>
+  </main>
 
-                <p id="message" class="message"></p>
+  <footer class="footer">
+    <span>SISTEM AKADEMIK / LAYANAN MAHASISWA</span>
+    <span>Antarmuka demonstrasi · 2026</span>
+  </footer>
 
-                <div class="form-actions">
-                    <button type="submit" id="btnSave" class="btn btn-primary"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5 3h11l4 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm2 1v5h8V4H7zm5 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg><span id="saveLabel">Simpan</span></button>
-                    <button type="button" id="btnCancel" class="btn btn-secondary">Batal</button>
-                    <button type="reset" class="btn btn-danger"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg><span>Reset</span></button>
-                </div>
-            </form>
-        </section>
-
-        <!-- KOLOM KANAN: DATA -->
-        <section class="card">
-            <div class="table-header">
-                <h2>Data Mahasiswa</h2>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Cari mahasiswa...">
-                    <button type="button" id="searchBtn"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5.5 5.5"/></svg></button>
-                </div>
-            </div>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>NIM</th>
-                        <th>Nama</th>
-                        <th>Jurusan</th>
-                        <th>Email</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody id="studentBody"></tbody>
-            </table>
-
-            <div class="pagination" id="pagination"></div>
-        </section>
-
-    </main>
-
-    <script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
